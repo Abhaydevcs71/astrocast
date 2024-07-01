@@ -28,7 +28,7 @@ class ResultRemoteDataSourceImpl implements ResultRemoteDataSource{
           'x-rapidapi-key': api.apiKey,
           'x-rapidapi-host': api.apihost,
           //use your api key 
-          // link is for generate api key is "https://rapidapi.com/soralapps/api/best-daily-astrology-and-horoscope-api"
+          // link for generate api key is "https://rapidapi.com/soralapps/api/best-daily-astrology-and-horoscope-api"
           //
         },
 
