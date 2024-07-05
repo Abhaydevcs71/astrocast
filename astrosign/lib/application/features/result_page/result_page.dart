@@ -1,3 +1,4 @@
+import 'package:astrosign/application/core/failure%20screens/shimmer_screen.dart';
 import 'package:astrosign/application/features/result_page/bloc/result_bloc.dart';
 import 'package:astrosign/application/features/result_page/widgets/other_results.dart';
 import 'package:astrosign/application/features/result_page/widgets/prediction_card.dart';
@@ -56,7 +57,7 @@ class ResultPage extends StatelessWidget {
                 return SizedBox(
                   height: MediaQuery.of(context).size.height,
                   width: MediaQuery.of(context).size.width,
-                  child: const Center(child: CircularProgressIndicator(color: Color(0xff5e68c4),)));
+                  child: const ShimmerScreen());
               }
                 else if (state is ResultStateLoaded) {
                 return Column(
@@ -98,7 +99,15 @@ class ResultPage extends StatelessWidget {
                 );
               } else if (state is ResultStateError) {
                 return  Center(
-                  child: Text(state.message),
+                  child: Card(
+                    color: const Color(0xff222540),
+                    shadowColor: Colors.black,
+                    elevation: 8,
+                    child: ListTile(
+                      title: Text(state.message,style: Theme.of(context).textTheme.displaySmall,)
+                    ),
+                  )
+                  
                 );
               }
               return const Center(

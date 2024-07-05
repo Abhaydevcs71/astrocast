@@ -6,7 +6,6 @@ import 'package:http/http.dart' as http;
 import 'package:astrosign/data/models/result_model.dart';
 
 abstract class ResultRemoteDataSource{
-
   Future<ResultModel> getResultFromApi(String zodiacSign);
 }
 
@@ -35,20 +34,22 @@ class ResultRemoteDataSourceImpl implements ResultRemoteDataSource{
         
       );
       if (response.statusCode == 200) {
-        print(response);
-        print(response.statusCode);
+       // print(response);
+        //print(response.statusCode);
 
         final Map<String,dynamic> responseBody = jsonDecode(response.body);
 
         final ResultModel result = 
         ResultModel.fromJson(responseBody);
 
-        print(result);
+      //  print(result);
 
         return result;
       }else {
+        final Map<String,dynamic> errorresponse = jsonDecode(response.body);
+      //  print(response.statusCode);
 
-        throw Exception("Faild to load result");
+        throw errorresponse;
 
       }
     }catch (e){

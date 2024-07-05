@@ -1,7 +1,5 @@
 import 'package:astrosign/data/datasources/result_remote_datasource.dart';
-import 'package:astrosign/data/repositories/result_repo_impl.dart';
 import 'package:astrosign/domain/entities/result_entity.dart';
-import 'package:astrosign/domain/repositories/result_repository.dart';
 
 class ResultUseCase{
 

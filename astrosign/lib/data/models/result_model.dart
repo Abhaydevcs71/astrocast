@@ -4,7 +4,7 @@ import 'package:astrosign/domain/entities/result_entity.dart';
 
 class ResultModel extends ResultEntity{
 
-  ResultModel({required status,required prediction,required number,required color,required mantra,required remedy}) 
+  const ResultModel({required status,required prediction,required number,required color,required mantra,required remedy}) 
   : super(status: status, prediction: prediction, number: number, color: color, mantra: mantra, remedy: remedy);
 
 
